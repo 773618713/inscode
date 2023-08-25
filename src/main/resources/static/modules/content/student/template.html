@@ -1,0 +1,52 @@
+<div class="d-flex justify-content-between mb-2">
+    <div class="align-self-center">
+        <span style="font-size: 1.3rem;">{{moduleName}}</span>
+    </div>
+    <div>
+        <button class="btn btn-primary" ng-click="add()"><i class="iconfont icon-add"></i> 添加</button>
+        <button class="btn btn-warning" ng-click="edit()"><i class="iconfont icon-edit"></i> 修改</button>
+        <button class="btn btn-danger" ng-click="del()"><i class="iconfont icon-delete"></i> 删除</button>
+        <!--<button class="btn btn-primary" ng-click="menuButton()"><i class="iconfont icon-list"></i> 菜单按钮管理</button>-->
+    </div>
+</div>
+<form class="form-inline">
+    <label>名称:</label>
+    <input class="form-control" type="text" ng-model="form.name">
+    <button class="btn btn-secondary" ng-click="select()"><i class="iconfont icon-search"></i>&nbsp;查询</button>
+</form>
+<div class="table-responsive">
+    <table class="table table-hover table-bordered text-center">
+        <thead class="thead-light">
+        <tr>
+            <th class="table-th-checkbox"><input ng-click="checkAll($event.target)" type="checkbox"/></th>
+            <th column="id" class="sorting" ng-click="order($event.target)">id</th>
+            <th column="name" class="sorting" ng-click="order($event.target)">名称</th>
+            <th column="age" class="sorting" ng-click="order($event.target)">年龄</th>
+            <!--<th column="url" class="sorting" ng-click="order($event.target)">路径</th>
+            <th column="icon" class="sorting" ng-click="order($event.target)">图标</th>
+            <th column="icon_background" class="sorting" ng-click="order($event.target)">图标背景</th>
+            <th column="description" class="sorting" ng-click="order($event.target)">描述</th>
+            <th column="order_no" class="sorting" ng-click="order($event.target)">序号</th>-->
+        </tr>
+        </thead>
+        <tbody ng-switch on="dataList.length">
+        <tr ng-switch-when="0">
+            <td colspan="100" class="text-left">查询无记录</td>
+        </tr>
+        <tr ng-repeat="data in dataList">
+            <td>
+                <input name="dataPk" type="checkbox" value="{{data}}"/>
+            </td>
+            <td>{{data.id}}</td>
+            <td>{{data.name}}</td>
+            <td>{{data.age}}</td>
+            <!--<td>{{data.url}}</td>
+            <td>{{data.icon}}</td>
+            <td>{{data.icon_background}}</td>
+            <td>{{data.description}}</td>
+            <td>{{data.order_no}}</td>-->
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div class="div-page" ng-include="'plugin/frame/3.2.1/html/page.html'"></div>

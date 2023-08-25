@@ -1,0 +1,51 @@
+<div class="modal-content">
+    <div class="modal-header">
+        <h4 class="modal-title">{{moduleName}}</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <form class="row">
+            <label class="col-sm-2 col-form-label">名称</label>
+            <div class="col-sm-4">
+                <input type="text" ng-model="form.name" class="form-control"
+                       form-check="must" form-check-alert="名称不能为空"/>
+            </div>
+            <label class="col-sm-2 col-form-label">年龄</label>
+            <div class="col-sm-4">
+                <input type="text" ng-model="form.age" class="form-control"
+                       form-check="must" form-check-alert="年龄不能为空"/>
+            </div>
+            <!--<label class="col-sm-2 col-form-label">路径</label>
+            <div class="col-sm-4">
+                <input type="text" ng-model="form.url" class="form-control"
+                       form-check="must" form-check-alert="路径不能为空"/>
+            </div>
+            <label class="col-sm-2 col-form-label">图标</label>
+            <div class="col-sm-4">
+                <input type="text" ng-model="form.icon" class="form-control"
+                       form-check="must" form-check-alert="图标不能为空"/>
+            </div>
+            <label class="col-sm-2 col-form-label">图标背景</label>
+            <div class="col-sm-4">
+                <input type="text" ng-model="form.icon_background" class="form-control"
+                       form-check="must" form-check-alert="图标背景不能为空"/>
+            </div>
+            <label class="col-sm-2 col-form-label">描述</label>
+            <div class="col-sm-4">
+                <input type="text" ng-model="form.description" class="form-control"
+                       form-check="must" form-check-alert="描述不能为空"/>
+            </div>
+            <label class="col-sm-2 col-form-label">序号</label>
+            <div class="col-sm-4">
+                <input type="text" ng-model="form.order_no" class="form-control"
+                       form-check="must" form-check-alert="序号不能为空"/>
+            </div>-->
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button ng-click="save()" type="button" class="btn btn-primary"><i class="iconfont icon-baocun"></i>&nbsp;保存
+        </button>
+    </div>
+</div>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!--学生-->
+<mapper namespace="student" >
+<resultMap id="BaseResultMap" type="java.util.HashMap" ></resultMap>
+<parameterMap id="BaseParameterMap" type="java.util.HashMap" ></parameterMap>
+
+<!--查询学生-->
+<select id="findStudent" resultMap="BaseResultMap" parameterMap="BaseParameterMap">
+	SELECT
+		id,
+		name,
+		age,
+		create_by,
+		create_time
+	FROM
+	student
+	WHERE
+	delete_flag = 0
+	<if test="fk_student != null">
+		AND id = #{fk_student}
+	</if>
+	<if test="name != null and name !=''">
+		AND name like '%'||#{name}||'%'
+	</if>
+	<if test="orderColumn != null">
+		ORDER BY ${orderColumn.column} ${orderColumn.order}
+	</if>
+	<if test="orderColumn == null">
+		ORDER BY create_time desc
+	</if>
+</select>
+
+<!--添加学生-->
+<insert id="addStudent" parameterMap="BaseParameterMap">
+	INSERT INTO
+		student
+	(
+		id,
+		name,
+	 	age,
+		create_by,
+		create_time
+	)
+	VALUES
+	(
+		#{UUID},
+		#{name},
+		CAST(#{age} as decimal),
+		#{userInfo.id},
+		datetime(CURRENT_TIMESTAMP, 'localtime')
+	)
+</insert>
+
+<!--更新学生-->
+<update id="updateStudent" parameterMap="BaseParameterMap">
+	UPDATE
+		student
+	SET
+		name = #{name},
+	    age = CAST(#{age} as decimal),
+		update_by = #{userInfo.id},
+		update_time = datetime(CURRENT_TIMESTAMP, 'localtime')
+	WHERE
+		id = #{fk_student}
+</update>
+
+<!--删除学生-->
+<update id="deleteStudent" parameterMap="BaseParameterMap">
+	UPDATE
+		student
+	SET
+		delete_flag = 1,
+		update_by = #{userInfo.id},
+		update_time = datetime(CURRENT_TIMESTAMP, 'localtime')
+	WHERE
+		id = #{fk_student}
+</update>
+
+</mapper>

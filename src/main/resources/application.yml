@@ -1,0 +1,29 @@
+server:
+  port: 80
+
+spring:
+  datasource:
+    driver-class-name: org.sqlite.JDBC
+    # 数据库最好不要用相对路径，因为项目的文件会复制到target目录中。
+    # 路径：db/mydb.bd
+    #url: jdbc:sqlite:db/mydb.db
+    # 路径：src/main/resources/db/mydb.db
+    url: jdbc:sqlite::resource:db/mydb.db
+    #url: jdbc:sqlite:D:/Program Files/sqlite3/mydb.db
+    username:
+    password:
+
+mybatis:
+  mapper-locations:
+    - classpath:mapper/*.xml
+
+auth:
+  type: none #oauth2
+  public_paths: [public,public2]
+  app_id: 8e64078d-cdb2-44d0-b45f-e1e61a28469d
+  secret: dyedu2019!
+  #redirect_uri: http://client.com/
+  authorize_url: http://server.com:8081/oauth/authorize?grant_type=authorization_code&client_id=APPID&redirect_uri=REDIRECT_URI
+  access_token_url: http://server.com:8081/oauth/token?client_id=APPID&secret=SECRET&code=CODE&grant_type=authorization_code&redirect_uri=REDIRECT_URI
+  profile_url: http://server.com:8081/oauth/profile
+  logout_url: http://server.com:8081/logout?redirect_uri=REDIRECT_URI

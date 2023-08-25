@@ -16,6 +16,10 @@ define(['app', "assets/js/menu/1.0.1/menu"],function(app){return {module: functi
                     url:"modules/content/user",
                 },{
                     id:"021",
+                    name:"学生管理",
+                    url:"modules/content/student",
+                },{
+                    id:"021",
                     name:"DropDown",
                     url:"modules/content/dropdown",
                 },{
