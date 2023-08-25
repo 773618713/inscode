@@ -1,0 +1,100 @@
+/*======================================== 整体布局 Begin ===================================*/
+body {
+    background: #eee;
+}
+
+.home-out-div {
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+}
+
+/*.home-content {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: red;
+    margin-top: 5rem;
+    background: red;
+}*/
+
+.head-content {
+    background: #ffffff;
+    height: 4rem;
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    box-shadow: 10px 0px 17px rgb(72 72 72 / 20%);
+    border-bottom: 1px solid #eee;
+    z-index: 10;
+}
+
+.left-menu {
+    top: 0;
+    bottom: 0;
+    width: 240px;
+    display: block;
+    position: fixed;
+    width: 100%;
+    max-width: 240px;
+    overflow-y: auto;
+    margin-top: 4rem;
+    background: #fff;
+    box-shadow: 10px 0px 17px rgb(72 72 72 / 10%);
+    transition: margin-left .5s;
+    background: #f8f9fa
+}
+.hide-menu .left-menu {
+    margin-left:-240px;
+}
+
+.left-menu-hide-btn {
+    margin-left: 240px;
+    position: fixed;
+    color: #999;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1rem;
+    transition: margin-left .5s;
+    top: 4rem;
+
+    font-family: "iconfont" !important;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.hide-menu .left-menu-hide-btn {
+    margin-left:0px;
+}
+
+.left-menu-hide-btn:before {
+    content: "\e6be";
+}
+
+.hide-menu .left-menu-hide-btn:before {
+    content: "\e6c1";
+}
+
+.main-content {
+    margin-left: 240px;
+    width: calc(100% - 240px);
+    margin-top: 4rem;
+    transition: .5s;
+    /*transition: width .5s;
+    transition: margin-left .5s;*/
+}
+
+.hide-menu .main-content{
+    margin-left: 0px;
+    width: calc(100% - 0px);
+}
+
+.main-content-in {
+    margin: 5rem 15px 0px 15px;
+    padding: 15px;
+    background: #fff;
+    width: calc(100% - 30px);
+}
+/*======================================== 整体布局 End ===================================*/

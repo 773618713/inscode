@@ -1,0 +1,65 @@
+<div class="modal-content">
+    <div class="modal-header">
+        <h4 class="modal-title">{{menu_name}}</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <button ng-click="alert()">alert</button>
+        <button ng-click="getCookie()">getCookie</button>
+        <button ng-click="setCookie()">setCookie</button>
+        <form class="row">
+            <label class="col-sm-2 col-form-label">身份证号</label>
+            <div class="col-sm-4">
+                <input type="text" ng-model="form.idCard" class="form-control"
+                       form-check="must,idcard" form-check-alert="身份证号不能为空"/>
+            </div>
+            <label class="col-sm-2 col-form-label">序号</label>
+            <div class="col-sm-4">
+                <input type="text" ng-model="form.order_no" class="form-control datePicker"
+                       form-check="must" form-check-alert=""/>
+            </div>
+            <label class="col-sm-2 col-form-label"><span class="glyphicon glyph{{form.img}}"></span> 图标</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control"
+                       style="width: 35%; display: inline;" ng-model="form.img"/>
+                <select ng-model="form.img" class="form-control" style="width: 49%; display: inline;">
+                    <option ng-repeat="icon in icons " value="icon.name">iconfont {{icon.name}}</option>
+                </select>
+            </div>
+            <label class="col-sm-2 col-form-label">效果</label>
+            <div class="col-sm-4">
+                <button type="button" class="btn btn-{{form.style}}">
+                    <i class="iconfont {{form.img}}"></i> {{form.name}}
+                </button>
+            </div>
+            <label class="col-sm-2 col-form-label">样式</label>
+            <div class="col-sm-4">
+                <input type="text" ng-model="form.style" class="form-control"/>
+            </div>
+            <label class="col-sm-2 col-form-label">类型</label>
+            <div class="col-sm-4">
+                <select class="form-control" ng-model="form.type" form-check="must" form-check-alert="身份证号不能为空">
+                    <option value="">空</option>
+                    <option value="0">系统</option>
+                    <option value="1">区级</option>
+                    <option value="2">校级</option>
+                </select>
+            </div>
+            <label class="col-sm-2 col-form-label">地址</label>
+            <div class="col-sm-10">
+                <input type="text" ng-model="form.path" class="form-control" form-check="must"
+                       form-check-alert="地址不能为空">
+            </div>
+            <label class="col-sm-2 col-form-label">说明</label>
+            <div class="col-sm-10">
+                <textarea class="form-control" ng-model="form.comment" rows="3"></textarea>
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button ng-click="save()" type="button" class="btn btn-primary"><i class="iconfont icon-baocun"></i>&nbsp;保存
+        </button>
+    </div>
+</div>

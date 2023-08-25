@@ -1,0 +1,174 @@
+/*======================================== 菜单 Begin ===================================*/
+#menus {
+    margin: 1rem 0px 0px 1rem;
+}
+
+#menus .menu {
+    cursor: pointer;
+    color: black;
+    font-size: 1rem;
+}
+
+#menus .menu:hover {
+    color: #6e84a3;
+    font-size: 1.1rem;
+}
+
+#menus .menu.active {
+    color: #6087fe;
+    font-size: 1.1rem;
+}
+
+#menus .menu .menu-content {
+    padding: 0.5rem 0;
+    transition: font-size .3s;
+}
+
+#menus .menu-arrow {
+    float: right;
+    margin-right: 1rem;
+}
+
+/*======================================== 菜单 End ===================================*/
+
+/*======================================== 滚动条 Begin ===================================*/
+.overflow-scroll {
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.overflow-scroll::-webkit-scrollbar {
+    display: block;
+}
+
+.overflow-scroll::-webkit-scrollbar { /*滚动条滑块样式*/
+    width: 5px;
+}
+
+.overflow-scroll::-webkit-scrollbar-thumb { /*滚动条滑块样式*/
+    background-color: #b9b5b5;
+    border-radius: 3px;
+}
+
+.overflow-scroll::-webkit-scrollbar-track { /*滚动条里面轨道*/
+    background-color: #dcdcdc;
+}
+
+/*======================================== 滚动条 End ===================================*/
+
+.btn > .iconfont {
+    font-size: 0.95rem;
+}
+
+.form-inline > * {
+    margin-right: 0.5rem !important;
+    margin-bottom: 0.5rem !important;
+}
+
+form.row > * {
+    margin-bottom: 0.5rem !important;
+}
+
+table {
+    border: 1px solid rgba(151, 151, 151, 0.18);
+    margin-bottom: 0px !important;
+}
+
+.table-th-checkbox {
+    width: 1rem;
+}
+
+.table th, td {
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.div-page {
+    margin-top: 0.5rem;
+}
+
+/*==========Bootstrap 多级下拉菜单示例===========*/
+.dropdown-menus .dropdown-menu li a {
+    display: block;
+    padding: 3px 20px;
+    clear: both;
+    font-weight: normal;
+    line-height: 1.428571429;
+    color: #333;
+    white-space: nowrap;
+}
+
+.dropdown-menus .dropdown-menu li a > span {
+    display: inline-block;
+    width: 130px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.dropdown-menus .dropdown-menu li a:hover, .dropdown-menus .dropdown-menu li a:focus {
+    color: #262626;
+    text-decoration: none;
+    background-color: #f5f5f5;
+}
+
+.dropdown-menus .dropdown-overflow {
+    max-height: 210px;
+    overflow-y: scroll;
+}
+
+.dropdown-menus .dropdown-float {
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0px;
+}
+
+.dropdown-menus .dropdown-float li {
+    height: 30px;
+    position: relative;
+}
+
+.dropdown-menus .dropdown-float .dropdown-menu {
+    top: -20px;
+    left: 188px;
+}
+
+.dropdown-menus .dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-menus .dropdown-submenu > .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -6px;
+    margin-left: -1px;
+    -webkit-border-radius: 0 6px 6px 6px;
+    -moz-border-radius: 0 6px 6px;
+    border-radius: 0 6px 6px 6px;
+}
+
+.dropdown-menus .dropdown-submenu:hover > .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menus .dropdown-submenu > a:after {
+    display: block;
+    content: " ";
+    float: right;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 5px 0 5px 5px;
+    border-left-color: #ccc;
+    margin-top: 5px;
+    margin-right: -10px;
+}
+
+.dropdown-menus .dropdown-submenu:hover > a:after {
+    border-left-color: #fff;
+}
+
+/*==========Bootstrap 多级下拉菜单示例 END===========*/

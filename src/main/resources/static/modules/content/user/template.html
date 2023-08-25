@@ -1,0 +1,56 @@
+<div class="d-flex justify-content-between mb-2">
+    <div class="align-self-center">
+        <span style="font-size: 1.3rem;">模块标题</span>
+    </div>
+    <div>
+        <button class="btn btn-primary" ng-click="add()"><i class="iconfont icon-add"></i> 添加</button>
+        <button class="btn btn-warning" ng-click="edit()"><i class="iconfont icon-edit"></i> 修改</button>
+        <button class="btn btn-danger" ng-click="del()"><i class="iconfont icon-delete"></i> 删除</button>
+    </div>
+</div>
+<form class="form-inline">
+    <label for="email">邮箱:</label>
+    <input class="form-control" type="email" id="email" placeholder="Enter email">
+    <label for="pwd">密码:</label>
+    <input class="form-control" type="password" id="pwd" placeholder="Enter password">
+    <label for="sel1">单选下拉菜单:</label>
+    <select class="form-control" id="sel1">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+    </select>
+    <!--<div class="form-check">
+        <label class="form-check-label">
+            <input class="form-check-input" type="checkbox"> Remember me
+        </label>
+    </div>-->
+    <button class="btn btn-secondary"><i class="iconfont icon-search"></i>&nbsp;查询</button>
+    <!--<button type="submit" class="mr-sm-2 btn btn-primary">Submit</button>-->
+</form>
+<div class="table-responsive">
+    <table class="table table-hover table-bordered text-center">
+        <thead class="thead-light">
+        <tr>
+            <th class="table-th-checkbox"><input ng-click="checkAll($event.target)" type="checkbox"/></th>
+            <th column="origin_ord" class="sorting" ng-click="order($event.target)">投档位序</th>
+            <th column="enroll_number" class="sorting" ng-click="order($event.target)">报名号</th>
+            <th column="name" class="sorting" ng-click="order($event.target)">姓名</th>
+        </tr>
+        </thead>
+        <tbody ng-switch on="dataList.length">
+        <tr ng-switch-when="0">
+            <td colspan="100" class="text-left">查询无记录</td>
+        </tr>
+        <tr ng-repeat="data in dataList">
+            <td>
+                <input name="dataPk" type="checkbox" value="{{data.id}}"/>
+            </td>
+            <td>{{data.origin_ord}}</td>
+            <td>{{data.enroll_number}}</td>
+            <td>{{data.name}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div class="div-page" ng-include="'plugin/frame/3.2.1/html/page.html'"></div>
